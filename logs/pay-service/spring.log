@@ -1,0 +1,163 @@
+19:14:44:486  INFO 117185 --- [main] com.hmall.pay.PayApplication             : Starting PayApplication using Java 11.0.25 on lemurArch with PID 117185 (/home/lemur/work/java/project/hmall/pay-service/target/classes started by lemur in /home/lemur/work/java/project/hmall)
+19:14:44:487 DEBUG 117185 --- [main] com.hmall.pay.PayApplication             : Running with Spring Boot v2.7.12, Spring v5.3.27
+19:14:44:487  INFO 117185 --- [main] com.hmall.pay.PayApplication             : The following 1 profile is active: "local"
+19:14:44:922  WARN 117185 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.hmall.trade.mapper]' package. Please check your configuration.
+19:14:44:959  INFO 117185 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=194f88c5-10bd-3c9f-9012-407100241c1c
+19:14:45:117  INFO 117185 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8086 (http)
+19:14:45:121  INFO 117185 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+19:14:45:121  INFO 117185 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+19:14:45:175  INFO 117185 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+19:14:45:175  INFO 117185 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 666 ms
+19:14:45:259  INFO 117185 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+19:14:45:385  INFO 117185 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'trade-service' URL not provided. Will try picking an instance via load-balancing.
+19:14:45:389  WARN 117185 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'payController' defined in file [/home/lemur/work/java/project/hmall/pay-service/target/classes/com/hmall/pay/controller/PayController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'payOrderServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hmall.pay.mapper.PayOrderMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+19:14:45:391  INFO 117185 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+19:14:45:399  INFO 117185 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+19:14:45:410 ERROR 117185 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'payController' defined in file [/home/lemur/work/java/project/hmall/pay-service/target/classes/com/hmall/pay/controller/PayController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'payOrderServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hmall.pay.mapper.PayOrderMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.12.jar:2.7.12]
+	at com.hmall.pay.PayApplication.main(PayApplication.java:14) ~[classes/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'payOrderServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hmall.pay.mapper.PayOrderMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.27.jar:5.3.27]
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hmall.pay.mapper.PayOrderMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.27.jar:5.3.27]
+	... 34 common frames omitted
+
+19:15:17:689  INFO 117579 --- [main] com.hmall.pay.PayApplication             : Starting PayApplication using Java 11.0.25 on lemurArch with PID 117579 (/home/lemur/work/java/project/hmall/pay-service/target/classes started by lemur in /home/lemur/work/java/project/hmall)
+19:15:17:690 DEBUG 117579 --- [main] com.hmall.pay.PayApplication             : Running with Spring Boot v2.7.12, Spring v5.3.27
+19:15:17:691  INFO 117579 --- [main] com.hmall.pay.PayApplication             : The following 1 profile is active: "local"
+19:15:18:155  INFO 117579 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c7fe33d9-ccc4-3004-820a-bfc28185d02f
+19:15:18:313  INFO 117579 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8086 (http)
+19:15:18:318  INFO 117579 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+19:15:18:318  INFO 117579 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+19:15:18:369  INFO 117579 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+19:15:18:370  INFO 117579 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 660 ms
+19:15:18:453  INFO 117579 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+19:15:18:557  INFO 117579 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'trade-service' URL not provided. Will try picking an instance via load-balancing.
+19:15:18:891  INFO 117579 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+19:15:19:003  INFO 117579 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 84231914-dff8-4e61-98d7-aeda46d83af8
+19:15:19:021  INFO 117579 --- [main] org.reflections.Reflections              : Reflections took 11 ms to scan 1 urls, producing 3 keys and 6 values 
+19:15:19:032  INFO 117579 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 4 keys and 9 values 
+19:15:19:038  INFO 117579 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 3 keys and 10 values 
+19:15:19:039  WARN 117579 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+19:15:19:044  INFO 117579 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 1 keys and 5 values 
+19:15:19:050  INFO 117579 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 1 keys and 7 values 
+19:15:19:055  INFO 117579 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 2 keys and 8 values 
+19:15:19:056  WARN 117579 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+19:15:19:057  INFO 117579 --- [main] com.alibaba.nacos.common.remote.client   : [84231914-dff8-4e61-98d7-aeda46d83af8] RpcClient init label, labels = {module=naming, source=sdk}
+19:15:19:057  INFO 117579 --- [main] com.alibaba.nacos.common.remote.client   : [84231914-dff8-4e61-98d7-aeda46d83af8] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+19:15:19:057  INFO 117579 --- [main] com.alibaba.nacos.common.remote.client   : [84231914-dff8-4e61-98d7-aeda46d83af8] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+19:15:19:058  INFO 117579 --- [main] com.alibaba.nacos.common.remote.client   : [84231914-dff8-4e61-98d7-aeda46d83af8] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+19:15:19:058  INFO 117579 --- [main] com.alibaba.nacos.common.remote.client   : [84231914-dff8-4e61-98d7-aeda46d83af8] Try to connect to server on start up, server: {serverIp = 'localhost', server main port = 8848}
+19:15:19:377  INFO 117579 --- [main] com.alibaba.nacos.common.remote.client   : [84231914-dff8-4e61-98d7-aeda46d83af8] Success to connect to server [localhost:8848] on start up, connectionId = 1736075719236_172.18.0.1_47762
+19:15:19:379  INFO 117579 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [84231914-dff8-4e61-98d7-aeda46d83af8] Notify connected event to listeners.
+19:15:19:380  INFO 117579 --- [main] com.alibaba.nacos.common.remote.client   : [84231914-dff8-4e61-98d7-aeda46d83af8] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+19:15:19:382  INFO 117579 --- [main] com.alibaba.nacos.common.remote.client   : [84231914-dff8-4e61-98d7-aeda46d83af8] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$992/0x0000000800714440
+19:15:19:424  INFO 117579 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8086 (http) with context path ''
+19:15:19:430  INFO 117579 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP pay-service 192.168.101.166:8086 register finished
+19:15:19:431  INFO 117579 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+19:15:19:433  INFO 117579 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+19:15:19:443  INFO 117579 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+19:15:19:499  INFO 117579 --- [main] com.hmall.pay.PayApplication             : Started PayApplication in 2.061 seconds (JVM running for 2.351)
+19:15:19:988  INFO 117579 --- [nacos-grpc-client-executor-8] com.alibaba.nacos.common.remote.client   : [84231914-dff8-4e61-98d7-aeda46d83af8] Receive server push request, request = NotifySubscriberRequest, requestId = 48
+19:15:19:990  INFO 117579 --- [nacos-grpc-client-executor-8] com.alibaba.nacos.common.remote.client   : [84231914-dff8-4e61-98d7-aeda46d83af8] Ack server push request, request = NotifySubscriberRequest, requestId = 48
+19:15:30:859  WARN 117579 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+19:15:30:859  WARN 117579 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+19:15:30:859  WARN 117579 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+19:15:30:860  WARN 117579 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+19:15:30:873  INFO 117579 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+19:15:30:875  INFO 117579 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+19:16:31:856  INFO 118408 --- [main] com.hmall.pay.PayApplication             : Starting PayApplication using Java 11.0.25 on lemurArch with PID 118408 (/home/lemur/work/java/project/hmall/pay-service/target/classes started by lemur in /home/lemur/work/java/project/hmall)
+19:16:31:857 DEBUG 118408 --- [main] com.hmall.pay.PayApplication             : Running with Spring Boot v2.7.12, Spring v5.3.27
+19:16:31:858  INFO 118408 --- [main] com.hmall.pay.PayApplication             : The following 1 profile is active: "local"
+19:16:32:360  INFO 118408 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c7fe33d9-ccc4-3004-820a-bfc28185d02f
+19:16:32:526  INFO 118408 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8086 (http)
+19:16:32:531  INFO 118408 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+19:16:32:531  INFO 118408 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+19:16:32:587  INFO 118408 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+19:16:32:587  INFO 118408 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 709 ms
+19:16:32:678  INFO 118408 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+19:16:32:788  INFO 118408 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'trade-service' URL not provided. Will try picking an instance via load-balancing.
+19:16:33:136  INFO 118408 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+19:16:33:234  INFO 118408 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of d6eb7811-bfcd-4b65-aa5a-b4f96ca29e02
+19:16:33:253  INFO 118408 --- [main] org.reflections.Reflections              : Reflections took 11 ms to scan 1 urls, producing 3 keys and 6 values 
+19:16:33:264  INFO 118408 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 4 keys and 9 values 
+19:16:33:271  INFO 118408 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 3 keys and 10 values 
+19:16:33:272  WARN 118408 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+19:16:33:277  INFO 118408 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 1 keys and 5 values 
+19:16:33:283  INFO 118408 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 1 keys and 7 values 
+19:16:33:288  INFO 118408 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 2 keys and 8 values 
+19:16:33:289  WARN 118408 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+19:16:33:289  INFO 118408 --- [main] com.alibaba.nacos.common.remote.client   : [d6eb7811-bfcd-4b65-aa5a-b4f96ca29e02] RpcClient init label, labels = {module=naming, source=sdk}
+19:16:33:290  INFO 118408 --- [main] com.alibaba.nacos.common.remote.client   : [d6eb7811-bfcd-4b65-aa5a-b4f96ca29e02] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+19:16:33:290  INFO 118408 --- [main] com.alibaba.nacos.common.remote.client   : [d6eb7811-bfcd-4b65-aa5a-b4f96ca29e02] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+19:16:33:290  INFO 118408 --- [main] com.alibaba.nacos.common.remote.client   : [d6eb7811-bfcd-4b65-aa5a-b4f96ca29e02] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+19:16:33:291  INFO 118408 --- [main] com.alibaba.nacos.common.remote.client   : [d6eb7811-bfcd-4b65-aa5a-b4f96ca29e02] Try to connect to server on start up, server: {serverIp = 'localhost', server main port = 8848}
+19:16:33:645  INFO 118408 --- [main] com.alibaba.nacos.common.remote.client   : [d6eb7811-bfcd-4b65-aa5a-b4f96ca29e02] Success to connect to server [localhost:8848] on start up, connectionId = 1736075793499_172.18.0.1_34946
+19:16:33:647  INFO 118408 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [d6eb7811-bfcd-4b65-aa5a-b4f96ca29e02] Notify connected event to listeners.
+19:16:33:648  INFO 118408 --- [main] com.alibaba.nacos.common.remote.client   : [d6eb7811-bfcd-4b65-aa5a-b4f96ca29e02] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+19:16:33:650  INFO 118408 --- [main] com.alibaba.nacos.common.remote.client   : [d6eb7811-bfcd-4b65-aa5a-b4f96ca29e02] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$992/0x0000000800714440
+19:16:33:695  INFO 118408 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8086 (http) with context path ''
+19:16:33:701  INFO 118408 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP pay-service 192.168.101.166:8086 register finished
+19:16:33:702  INFO 118408 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+19:16:33:704  INFO 118408 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+19:16:33:717  INFO 118408 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+19:16:33:764  INFO 118408 --- [main] com.hmall.pay.PayApplication             : Started PayApplication in 2.18 seconds (JVM running for 2.514)
+19:16:34:258  INFO 118408 --- [nacos-grpc-client-executor-11] com.alibaba.nacos.common.remote.client   : [d6eb7811-bfcd-4b65-aa5a-b4f96ca29e02] Receive server push request, request = NotifySubscriberRequest, requestId = 49
+19:16:34:261  INFO 118408 --- [nacos-grpc-client-executor-11] com.alibaba.nacos.common.remote.client   : [d6eb7811-bfcd-4b65-aa5a-b4f96ca29e02] Ack server push request, request = NotifySubscriberRequest, requestId = 49
+19:16:39:359  INFO 118408 --- [http-nio-8086-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [Hm_lvt_a1ff8825baa73c3a78eb96aa40325abc=1728276138,1728286700,1728388297,1729997375] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+19:16:39:364  INFO 118408 --- [http-nio-8086-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+19:16:39:364  INFO 118408 --- [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+19:16:39:365  INFO 118408 --- [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+19:16:44:170  INFO 118408 --- [http-nio-8086-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+19:16:44:275  INFO 118408 --- [http-nio-8086-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+19:16:44:278 DEBUG 118408 --- [http-nio-8086-exec-5] c.h.p.mapper.PayOrderMapper.selectList   : ==>  Preparing: SELECT id,biz_order_no,pay_order_no,biz_user_id,pay_channel_code,amount,pay_type,status,expand_json,result_code,result_msg,pay_success_time,pay_over_time,qr_code_url,create_time,update_time,creater,updater,is_delete FROM pay_order
+19:16:44:288 DEBUG 118408 --- [http-nio-8086-exec-5] c.h.p.mapper.PayOrderMapper.selectList   : ==> Parameters: 
+19:16:44:299 DEBUG 118408 --- [http-nio-8086-exec-5] c.h.p.mapper.PayOrderMapper.selectList   : <==      Total: 2
+19:17:07:015  WARN 118408 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+19:17:07:015  WARN 118408 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+19:17:07:016  WARN 118408 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+19:17:07:016  WARN 118408 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+19:17:07:038  INFO 118408 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+19:17:07:040  INFO 118408 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
