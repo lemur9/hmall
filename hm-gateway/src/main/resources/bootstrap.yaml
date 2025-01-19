@@ -10,5 +10,6 @@ spring:
                 shared-configs: # 共享配置
                     -   dataId: shared-jdbc.yaml # 共享mybatis配置
                     -   dataId: shared-log.yaml # 共享日志配置
+                    -   dataId: shared-sentinel.yaml
             discovery:
                 namespace: 8a16dfa7-96eb-464d-b1c3-e96527dbc120

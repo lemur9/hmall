@@ -1,9 +1,10 @@
 package com.hmall.api.config;
 
+import com.hmall.api.client.fallback.ItemClientFallbackFactory;
+import com.hmall.api.client.fallback.UserClientFallbackFactory;
 import com.hmall.common.utils.UserContext;
 import feign.Logger;
 import feign.RequestInterceptor;
-import feign.RequestTemplate;
 import org.springframework.context.annotation.Bean;
 
 import java.util.Objects;
@@ -22,5 +23,15 @@ public class DefaultFeignConfig {
                 requestTemplate.header("user-info", user.toString());
             }
         };
+    }
+
+    @Bean
+    public ItemClientFallbackFactory itemClientFallbackFactory() {
+        return new ItemClientFallbackFactory();
+    }
+
+    @Bean
+    public UserClientFallbackFactory userClientFallbackFactory() {
+        return new UserClientFallbackFactory();
     }
 }
