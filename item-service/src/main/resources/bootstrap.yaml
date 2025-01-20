@@ -14,5 +14,6 @@ spring:
                     - dataId: shared-log.yaml
                     - dataId: shared-swagger.yaml
                     - dataId: shared-sentinel.yaml
+                    - dataId: shared-seata.yaml
             discovery:
                 namespace: 8a16dfa7-96eb-464d-b1c3-e96527dbc120
