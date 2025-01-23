@@ -6,3 +6,6 @@ hm:
     package: com.hmall.item.controller
   db:
     database: hm-item
+feign:
+  sentinel:
+    enabled: true # 开启Feign对Sentinel的整合

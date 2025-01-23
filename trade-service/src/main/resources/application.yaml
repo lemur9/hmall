@@ -9,3 +9,5 @@ hm:
 feign:
   okhttp:
     enabled: true
+  sentinel:
+    enabled: true # 开启Feign对Sentinel的整合

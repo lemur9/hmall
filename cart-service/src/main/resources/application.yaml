@@ -9,7 +9,7 @@ feign:
   okhttp:
     enabled: true # 开启OKHttp连接池支持
   sentinel:
-    enabled: true
+    enabled: true # 开启Feign对Sentinel的整合
 hm:
   swagger:
     title: 购物车服务接口文档
